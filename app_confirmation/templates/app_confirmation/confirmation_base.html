@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- SEO -->
+	<meta charset="UTF-8">
+	<meta name="description" content="RUSHY REALM, indie clothing that darker than void" />
+	<meta name="keywords" content="rushyrealm, baju, jeans, kaos, distro, beli baju, beli jeans, toko online baju, toko online jeans" />
+	<meta name="author" content="Alzea Arafat" />
+
+	<!-- INCLUDE ALL STYLES -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datepicker.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/nala.css" %}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700,400italic' rel='stylesheet' type='text/css'>
+	<!-- EOC -->
+
+	<!-- INCLUDE FAVICONE -->
+	<link rel="shortcut icon" type="image/ico" href="{% static 'images/favicon.ico' %}"/>
+	<!-- EOC  -->
+
+	<!-- TELL BROWSER, THIS SITE IS MOBILE READY -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- EOC -->
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<header>
+	<div class="navbar-wrapper">
+		<nav class="navbar navbar-default navbar-custom">
+			<div class="container-custom">
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<div class="logo">
+								<a class="navbar-brand" href="/"><b>RUSHY REALM</b></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-8">
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/">HOME</a></li>
+								<li><a href="{% url 'order_form' %}">ORDER</a></li>
+								<li><a href="{% url 'confirmation_form' %}">PAYMENT CONFIRMATION</a></li>
+								<li><a href="{% url 'product_about' %}">ABOUT</a></li>
+								<li><a href="{% url 'product_contact' %}">CONTACT</a></li>
+								{% if user.is_authenticated %}
+								<li><a href="{{ request.META.HTTP_NAME }}/accounts/logout/" style="text-transform: uppercase;">WELCOME, {{ user.get_username }}</a></li>
+								{% else %}
+								<li><a href="{{ request.META.HTTP_NAME }}/order/login/?next=/">LOGIN/REGISTER</a></li>
+								{% endif %}
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+</header>
+
+<!-- BASE BODY CONTENT -->
+<body class="void-body-wrapper">
+	{% block content %}
+	{% endblock %}
+</body>
+<!-- EOC -->
+
+<footer>
+
+	<div class="container-custom">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="rushy-footer-text">
+					<p>MADE WITH <i class="fa fa-heart" style="padding-left: 5px; padding-right: 5px;"></i> FROM YOGYAKARTA</i></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- INCLUDE ALLJAVASCRIPT -->
+	<script type="text/javascript" src="{% static "js/jquery-2.2.4.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+	<script type="text/javascript">
+		$('.datepicker').datepicker({
+			format: 'yyyy-mm-dd',
+			autoclose: true,
+			todayBtn: "linked",
+			todayHighlight: true,
+		});
+	</script>
+	<!-- EOC -->
+
+</footer>
+</html>

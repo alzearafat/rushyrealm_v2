@@ -1,0 +1,33 @@
+{% extends "app_product/product_base.html" %}
+{% load staticfiles %}
+{% block title %}Rushy Realm | T-Shirts From Your Nightmares{% endblock %}
+{% block content %}
+
+<div class="rushy-homepage-wrapper">
+  <div class="container-custom">
+    <div class="row">
+      {% for product in products %}
+      <div class="col-xs-12 col-md-3">
+        <div class="rushy-product-image-wrapper">
+          <a href="{% url "product_single" id=product.id %}">
+            <div class="reveal">
+              <div class="rushy-product-image" style="background-image:url({{ request.META.HTTP_NAME }}/media/{{ product.gambar }}); no-repeat center center fixed" class="img-responsive"></div>
+              <div class="hidden">
+                <div class="caption">
+                  <div class="centered">
+                    <p>{{ product.nama }}</p>
+                    <p>-</p>
+                    <p>IDR {{ product.harga }}k</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "app_order/order_base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}Order Form | RUSHY REALM{% endblock %}
+{% block content %}
+
+<div class="order-form-wrapper">
+	<div class="container-custom-2">
+		<div class="row">
+			<div class="col-xs-12 col-md-6 rushy-confirmation-wrapper">
+				<div class="order-forms">
+					<br />
+					<form method="POST" enctype="multipart/form-data" class="order-form">{% csrf_token %}
+						<div class="form-group">
+							{{ form.kode_barang|as_crispy_field }}
+						</div>
+						<div class="form-group">
+							{{ form.ukuran|as_crispy_field }}
+						</div>
+						<div class="form-group">							
+    						<div id="div_id_nama" class="control-group">
+					            <label for="id_nama" class="control-label requiredField">
+					                Nama<span class="asteriskField">*</span>
+					            </label>
+            					<div class="controls">     
+				                    <input class="form-control rushy-input" id="id_nama" maxlength="200" name="nama" type="text" value="{{ request.user.username }}">
+            					</div>
+    						</div>
+						</div>
+						<div class="form-group">							
+    						<div id="div_id_email" class="control-group">
+					            <label for="id_email" class="control-label requiredField">
+					                Email<span class="asteriskField">*</span>
+					            </label>
+            					<div class="controls">     
+				                    <input class="form-control rushy-input" id="id_email" maxlength="200" name="email" type="text" value="{{ request.user.email }}">
+            					</div>
+    						</div>
+						</div>
+						<div class="form-group">
+							{{ form.no_tlp|as_crispy_field }}
+						</div>
+						<div class="form-group">
+							<label for="id_alamat">Alamat Lengkap:</label>
+							<textarea class="form-control" cols="40" id="id_alamat" name="alamat" rows="5"></textarea>
+							<p class="help-block">*Masukan alamat dengan lengkap/detil, termasuk kecamatan dan kota.</p>
+						</div>
+						<div class="product-card-button-wrapper">
+							<button type="submit" class="btn btn-block btn-lg btn-rushy"><b>ORDER NOW!</b></button>
+						</div>
+					</form>
+				</div>
+				<br />
+			</div>
+			<div class="col-xs-12 col-md-6" style="padding-left: 30px;">
+				<div class="strike">
+					<span><h4>HOW TO ORDER</h4></span>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="rushy-text-howto-order">
+							<ul>
+								<li>
+									<h4>1. Isi Form Pemesanan</h4>
+									<p>Isi dan racik form pemesanan disebelah kiri. Isi se-detil mungkin supaya barang tidak salah kirim. Pastikan juga nomor telepon kamu sudah benar</p>
+								</li>
+								<li>
+									<h4>2. Kami Bakal Menghubungi Kamu</h4>
+									<p>Crew kami bakal segera menghubungi kamu via SMS, untuk memberikan detil biaya yang harus dibayarkan</p>
+								</li>
+								<li>
+									<h4>3. Lakukan Pembayaran</h4>
+									<p>Lakukan pembayaran/transfer segera sesuai biaya yang diberikan crew kami, maksimal 1x24 jam setelah order</p>
+								</li>
+								<li>
+									<h4>4. Konfirmasi Pembayaran</h4>
+									<p>Segera melakukan konfirmasi pembayaran setelah men-transfer, agar order bisa segera kami proses: <span class="rushy-konfirmasi-pembayaran-link"><a href="{% url "confirmation_form" %}" target="_blank">Konfirmasi Pembayaran</a></span></p>
+								</li>
+								<li>
+									<h4>5. Barang Dikirim</h4>
+									<p>Barang kamu akan segera dikirim, setelah kamu melakukan pembayaran dan meng-konfirmasi pembayaran</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

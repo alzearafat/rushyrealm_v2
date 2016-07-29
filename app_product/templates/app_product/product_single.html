@@ -1,0 +1,74 @@
+{% extends "app_product/product_base.html" %}
+{% block title %}{{ product.nama }} | RUSHY REALM{% endblock %}
+{% block content %}
+
+<div class="container-custom">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="rushy-product-single-wrapper">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <div class="rushy-product-image-single" style="background-image:url({{ request.META.HTTP_NAME }}/media/{{ product.gambar }}); no-repeat center center fixed" class="img-responsive"></div>
+            </div>
+            <div class="item">
+              <div class="rushy-product-image-single" style="background-image:url({{ request.META.HTTP_NAME }}/media/{{ product.gambar_kecil_1 }}); no-repeat center center fixed" class="img-responsive"></div>
+            </div>
+            <div class="item">
+              <div class="rushy-product-image-single" style="background-image:url({{ request.META.HTTP_NAME }}/media/{{ product.gambar_kecil_2 }}); no-repeat center center fixed" class="img-responsive"></div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="rushy-product-desc-single">
+        <p><b>{{ product.nama }}</b></p>
+        <p><span class="rushy-product-kode-single">Product Code: <i>{{ product.kode }}</i></span></p>
+        <p><span class="rushy-product-harga-single">IDR {{ product.harga }}K</span></p>
+        <br />
+        <div class="rushy-product-description">
+          <p>{{ product.keterangan | safe }}</p>
+        </div>
+        <br />
+        <button type="button" class="rushy-add-to-cart" data-toggle="modal" data-target="#myModal" data-clipboard-text="{{ product.kode }}"><em>Order Now</em></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Product Code Has Been Copied!</h4>
+      </div>
+      <div class="modal-body">
+        Paste the Product Code at Order Form
+      </div>
+      <div class="modal-footer">
+        <a href="{% url "order_form" %}" class="btn btn-danger btn-block"><i class="fa fa-shopping-cart" aria-hidden="true" style="padding-right: 5px;"></i> Go to Order Form</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,578 @@
+/*
+* THEME NAME : INTO THE rushy
+* THEME AUTHOR : ZEA
+* THEME AUTHOR URL : https://github.com/alzearafat
+*/
+
+/*======================================= GLOBAL =======================================*/
+
+h1, h2, h3, h4, h5, body {
+  	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container-custom {
+  	max-width: 992px;
+  	padding-right: 15px;
+  	padding-left: 15px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+.container-custom-2 {
+  	max-width: 768px;
+  	padding-right: 15px;
+  	padding-left: 15px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+.container-custom-3 {
+  	max-width: 480px;
+  	padding-right: 15px;
+  	padding-left: 15px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+.btn-primary {
+  	background-color: #2980b9;
+  	color: #FFFFFF;
+  	border-radius: 3px;
+  	border-color: transparent;
+}
+
+.btn-success {
+  	background-color: #2ecc71;
+  	color: #FFFFFF;
+  	border-radius: 3px;
+  	border-color: transparent;
+}
+
+.btn-info {
+  	background-color: #3498db;
+  	color: #FFFFFF;
+  	border-radius: 3px;
+  	border-color: transparent;
+}
+
+.btn-warning {
+  	background-color: #f1c40f;
+  	color: #FFFFFF;
+  	border-radius: 3px;
+  	border-color: transparent;
+}
+
+.btn-danger {
+  	background-color: #F42;
+  	color: #FFFFFF;
+  	border-radius: 3px;
+  	border-color: transparent;
+}
+
+.btn-rushy {
+	background-color: transparent;
+	border: 2px solid #000000;
+  	color: #000000;
+  	border-radius: 0px;
+}
+
+.btn-rushy:hover {
+	background-color: #000000;
+  	color: #FFFFFF;
+  	border-radius: 0px;
+  	border-color: transparent;
+}
+
+.strike {
+  	display: block;
+  	text-align: center;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	color: #2C3E50;
+  	padding: 0px 5px 15px 5px;
+}
+
+.strike > span {
+  	position: relative;
+  	display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+  	content: "";
+  	position: absolute;
+  	top: 50%;
+  	width: 9999px;
+  	height: 1px;
+  	background: #2C3E50;
+}
+
+.strike > span:before {
+  	right: 100%;
+  	margin-right: 15px;
+}
+
+.strike > span:after {
+  	left: 100%;
+  	margin-left: 15px;
+}
+
+/*======================================= EOL =======================================*/
+
+
+/*======================================= HEADER =======================================*/
+
+.navbar-wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.navbar-default {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.navbar-brand {
+	font-size: 12px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-size: 12px;
+	color: #000000;
+}
+
+.navbar-nav > li > .dropdown-menu {
+	border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+	color: #000000;
+}
+
+/*======================================= EOL =======================================*/
+
+
+/*======================================= HOMEPAGE =======================================*/
+
+.rushy-product-image-wrapper {
+	margin-bottom: 20px;
+}
+
+.rushy-product-image {
+  	width: 100%;
+  	height: 220px;
+ 	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+  	background-size: cover;
+  	background-size: 100% 100%;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+}
+
+.reveal .hidden { display: block !important; visibility: visible !important; }
+.product:hover .reveal img { opacity: 1; }
+.reveal { position: relative; }
+.reveal .hidden { 
+  	position: absolute; 
+  	z-index: -1;
+  	top: 0; 
+  	width: 100%; 
+  	height: 100%;  
+  	opacity: 0;
+	  -webkit-transition: opacity 0.3s ease-in-out;
+	  -moz-transition: opacity 0.3s ease-in-out;
+	  -o-transition: opacity 0.3s ease-in-out;
+	  transition: opacity 0.3s ease-in-out;  
+}
+
+.reveal:hover .hidden { 
+  	z-index: 100000;
+  	opacity: 1;    
+}
+.reveal .caption {
+  	position: absolute;
+  	top: 0;  
+  	display: table;
+  	width: 100%;
+  	height: 100%;
+  	background-color: white; /* fallback for IE8 */
+  	background-color: rgba(255, 255, 255, 0.9);
+  	font: 14px/1.6 Lato, sans-serif;
+  	text-transform: uppercase;
+  	font-weight: normal;
+  	color: #777;
+  	letter-spacing: 1px;
+  	text-align: center;
+  	text-rendering: optimizeLegibility;
+}
+
+.reveal .hidden .caption .centered {
+  	display: table-cell;
+  	vertical-align: middle;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
+  .reveal .caption { 
+    font-size: 11px; 
+  }
+}
+
+/*======================================= EOL =======================================*/
+
+
+/*======================================= SINGLE =======================================*/
+
+.rushy-product-single-wrapper {
+	padding-bottom: 100px;
+}
+
+.rushy-product-image-single {
+	width: 100%;
+	height: 500px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.rushy-product-other-image-single {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 5px;
+    border: 1px solid #CCCCCC;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.carousel-control.right {
+	background-image: none;
+}
+
+.carousel-control.left {
+	background-image: none;
+}
+
+.glyphicon {
+	color: #000000;
+}
+
+.rushy-product-desc-single {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.rushy-product-harga-single {
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
+.rushy-add-to-cart {
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 5px 15px 5px 15px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+/*======================================= EOL =======================================*/
+
+
+/*======================================= ORDER FORM =======================================*/
+
+.order-form-wrapper {
+	padding-bottom: 50px;
+}
+
+.rushy-text-howto-order {
+	text-align: left;
+}
+
+.rushy-text-howto-order ul {
+	padding-left: 0px;
+	margin-left: 0px;	
+}
+
+.rushy-text-howto-order li {
+	list-style: none;
+	padding-left: 0px;
+	margin-left: 0px;
+	padding-bottom: 10px;
+}
+
+.rushy-input {
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+/*======================================= EOL =======================================*/
+
+
+/* ========================================== ALLAUTH LOGIN ========================================== */
+
+.allauth-background {
+  background: transparent;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.p-login {
+  color: #000000;
+  text-align: center;
+}
+
+.p-login .p-l-intro span {
+  display: block;
+}
+
+.p-login .p-l-options li i {
+  position: absolute;
+  left: 0;
+  font-size: 50px;
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.p-l-content-wrapper a {
+  color: #FFFFFF;
+}
+
+.p-login .p-l-content-wrapper {
+  margin: auto;
+  position: relative;
+}
+
+.p-login .p-l-content-wrapper {
+  height: 80%;
+  height: calc(100% - 100px);
+}
+
+.p-login .p-l-content-wrapper {
+  display: table;
+}
+
+.p-login .p-l-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.p-login .p-l-intro {
+  font-weight: 100;
+  font-size: 30px;
+  line-height: 40px;
+  text-shadow: 0 0 15px rgba(0,0,0,.75);
+  letter-spacing: 1.5px;
+  font-family: 'Bree Serif', serif;
+}
+
+.p-login .p-l-options {
+  width: 100%;
+  margin-top: 45px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.p-login .p-l-options li[data-provider="facebook"] {
+  width: 420px;
+  background: #3c599b;
+  border-top-color: #5575bd;
+  border-bottom-color: #2d4374;
+}
+
+.p-login .p-l-options li[data-provider] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 85px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+
+.p-login .p-l-options li {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.p-login .p-l-options li.spacer {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  border: none;
+  font-size: 12px;
+}
+
+.p-login .p-l-options li {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.p-login .p-l-options li.spacer hr {
+  width: 50px;
+  border: 0;
+  background-color: #000000 !important;
+  height: 1px;
+  display: inline-block;
+  margin: 0 10px;
+  margin-bottom: 3px;
+  background-color: rgba(255,255,255,.5);
+}
+
+.p-login .p-l-options li[data-provider="twitter"] {
+  background: #1dafec;
+  border-top-color: #4abff0;
+  border-bottom-color: #0f86b7;
+  margin-right: 16px;
+}
+
+.p-login .p-l-options li[data-provider] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 85px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+
+.p-login .p-l-options li {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.p-login .p-l-options li[data-provider="google"] {
+  background: #111111;
+  border-top-color: #222222;
+  border-bottom-color: #000000;
+}
+
+.p-login .p-l-options li[data-provider] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 85px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+
+.p-login .p-l-options li {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.p-login .p-l-policy {
+  padding-top: 20px;
+  font-size: 10px;
+}
+
+.p-login .p-l-policy, .p-login .p-l-source {
+  color: #000000;
+}
+
+.signup-sosmed {
+  padding: 30px 30px 30px 30px;
+}
+
+.rushy-confirmation-wrapper {
+  	background: url(../images/geometry.png) no-repeat center center;
+ 	 -webkit-background-size: cover;
+ 	 -moz-background-size: cover;
+ 	 -o-background-size: cover;
+  	background-size: cover;
+ 	 -webkit-transform-style: preserve-3d;
+ 	 -moz-transform-style: preserve-3d;
+  	transform-style: preserve-3d;
+  	border: 1px solid #D2D2D2;
+}
+
+/* ========================================== EOL ========================================== */
+
+
+/* ========================================== 404 PAGE ========================================== */
+
+
+
+/* ========================================== EOL ========================================== */
+
+
+/*======================================= ORDER/CONFIRM SUCCESS =======================================*/
+
+
+
+/* ========================================== EOL ========================================== */
+
+
+/*======================================= META PAGES =======================================*/
+
+.rushy-about-wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: justify;
+	font-size: 12px;
+	-moz-text-align-last: center;
+	-webkit-text-align-last: center;
+}
+
+.rushy-contact-wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	font-size: 16px;
+}
+
+/* ========================================== EOL ========================================== */
+
+
+/*======================================= FOOTER =======================================*/
+
+.rushy-footer-text {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 10px;
+	color: #000000;
+}
+
+/*======================================= EOL =======================================*/

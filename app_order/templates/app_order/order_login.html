@@ -1,0 +1,31 @@
+{% extends "app_order/order_base.html" %}
+{% load i18n %}
+{% block title %}Login | RUSHY REALM{% endblock %}
+{% block meta_robots %}<meta name="robots" content="noodp,noydir"/>{% endblock %}
+
+{% block content %}
+{% load account socialaccount %}
+{% providers_media_js %}
+<div class="allauth-background">
+  <div class="container-custom">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="l-wrap">
+          <div id="main">
+            <div class="p-login">
+              <div class="p-l-content-wrapper">
+                <div class="p-l-content">
+                  <ul class="p-l-options">
+                    <li data-provider="facebook"><a href="{% provider_login_url "facebook" method="oauth2" %}"><i class="fa fa-facebook-official fa-3x"></i><strong>Log in</strong> with <strong>Facebook</strong></a></li>
+                    <li class="spacer"><hr> I Accept RushyRealm.com <a style="color: #000000;"><u>Terms of Services</u></a><hr></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "app_order/order_base_blank.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block title %}Order Sukses! | rushyrealm.com{% endblock %}
+{% block content %}
+
+<meta http-equiv="refresh" content="5;url={{ request.META.HTTP_NAME }}/" />
+
+<div class="notif-success-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="product-card-align">
+          <div class="success-card">
+            <h4>Success!</h4>
+            <p>Our crew will contact you ASAP, thx!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

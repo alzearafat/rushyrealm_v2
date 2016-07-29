@@ -1,0 +1,63 @@
+{% extends "app_confirmation/confirmation_base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}Confirmation Form | RUSHY REALM{% endblock %}
+{% block content %}
+
+<div class="order-form-wrapper">
+	<div class="container-custom-3">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="strike">
+					<span><h4>Konfirmasi Pembayaran</h4></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-custom-3 rushy-confirmation-wrapper">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="order-forms">
+					<br/>
+					<form method="POST" enctype="multipart/form-data" class="order-form">{% csrf_token %}
+						<div class="form-group">
+							{{ form.id_order|as_crispy_field }}
+							<p class="help-block">*Silahkan cek email kamu, atau cek SMS dari kita untuk ID Order</p>
+						</div>
+						<div class="form-group">
+							{{ form.nama|as_crispy_field }}
+							<p class="help-block">*Nama lengkap pemilik rekening</p>
+						</div>
+						<div class="form-group">
+							{{ form.jumlah_transfer|as_crispy_field }}
+							<p class="help-block">*Contoh format: Rp. 100.000</p>
+						</div>
+						<div class="form-group">
+							<label for="tranggal_transfer">Tanggal Transfer</label>
+							<div class="input-group date">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar" aria-hidden="true"></i>
+								</div>
+								<input type="text" id="id_tanggal_transfer" name="tanggal_transfer" class="form-control datepicker" data-date-format="yyyy-mm-dd">
+							</div>
+						</div>
+						<div class="form-group">
+							{{ form.bukti_transfer|as_crispy_field }}
+							<p class="help-block">*Opsional</p>
+						</div>
+						<div class="product-card-button-wrapper">
+							<button type="submit" class="btn btn-block btn-lg btn-rushy"><b>CONFIRM!</b></button>
+						</div>
+						<br />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div align="center">
+		<u><a href="/">&LongLeftArrow; Or Back to Catalogue</a></u>
+	</div>
+</div>
+
+{% endblock %}
